@@ -11,7 +11,7 @@
   const setMenu = (open) => {
     nav.classList.toggle('is-open', open);
     toggle.setAttribute('aria-expanded', String(open));
-    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    toggle.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen');
   };
   toggle.addEventListener('click', () => setMenu(!nav.classList.contains('is-open')));
   document.querySelectorAll('.nav__menu a').forEach((a) => a.addEventListener('click', () => setMenu(false)));
@@ -42,7 +42,7 @@
     const tick = (now) => {
       const p = Math.min((now - start) / duration, 1);
       const eased = 1 - Math.pow(1 - p, 3);
-      el.textContent = Math.round(target * eased).toLocaleString('en');
+      el.textContent = Math.round(target * eased).toLocaleString('de');
       if (p < 1) requestAnimationFrame(tick);
     };
     requestAnimationFrame(tick);
@@ -58,7 +58,7 @@
     }, { threshold: 0.6 });
     counters.forEach((el) => co.observe(el));
   } else {
-    counters.forEach((el) => { el.textContent = Number(el.dataset.count).toLocaleString('en'); });
+    counters.forEach((el) => { el.textContent = Number(el.dataset.count).toLocaleString('de'); });
   }
 
   /* ---------- Contact form ---------- */
@@ -97,7 +97,7 @@
 
     form.classList.add('is-sending');
     const label = form.querySelector('.btn__label');
-    label.textContent = 'Sending…';
+    label.textContent = 'Wird gesendet …';
 
     try {
       const endpoint = form.dataset.endpoint;
@@ -115,13 +115,13 @@
       success.hidden = false;
       form.reset();
     } catch {
-      label.textContent = 'Something went wrong. Please try again';
-      setTimeout(() => { label.textContent = 'Send with love'; }, 3500);
+      label.textContent = 'Etwas ist schiefgelaufen. Bitte versuch es noch einmal';
+      setTimeout(() => { label.textContent = 'Mit Liebe senden'; }, 3500);
       return;
     } finally {
       form.classList.remove('is-sending');
     }
-    label.textContent = 'Send with love';
+    label.textContent = 'Mit Liebe senden';
   });
 
   /* ---------- Footer year ---------- */

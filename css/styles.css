@@ -312,7 +312,7 @@ svg { width: 1em; height: 1em; flex-shrink: 0; }
 }
 .badge__ring text {
   font: 600 10.2px var(--sans);
-  letter-spacing: .2em;
+  letter-spacing: .17em;
   text-transform: uppercase;
   fill: var(--rose-deep);
 }
@@ -653,7 +653,7 @@ svg { width: 1em; height: 1em; flex-shrink: 0; }
   position: relative;
 }
 .timeline__card--highlight::after {
-  content: "✦ heart of her work";
+  content: "✦ Herzstück ihrer Arbeit";
   display: block;
   margin-top: .8rem;
   font-size: .72rem;
